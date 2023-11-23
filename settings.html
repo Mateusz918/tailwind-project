@@ -37,14 +37,14 @@
         }
 
         .sidebar a {
-            color: rgb(255, 255, 255);
+            color: white;
             text-decoration: none;
             padding: 10px;
             display: block;
         }
 
         .sidebar a:hover {
-            background-color: #555555;
+            background-color: #555;
         }
 
         .main-content {
@@ -58,20 +58,24 @@
     <style>
         .container {
             margin-top: 20px;
-            width: 50%;
+            width: 80%;
             margin: 0 auto;
-            position: relative;
+
         }
-    
-        canvas#myChart {
-            width: 100%;
-            height: 100px;
-            position: absolute;
-            top: 300%;
-            left: 0%;
+
+        canvas {
+            max-width: 400px;
+            margin: 0 auto;
             transform: translate(-0%, +20%);
         }
     </style>
+
+        <style>
+            .settings-container {
+                margin-left: 20%;
+                margin-top: 50px;
+            }
+        </style>
 
 </head>
 
@@ -89,49 +93,47 @@
                     <li><a href="index.html"><i class="fa-solid fa-arrows-up-to-line"></i> Progress</a></li>
                     <li><a href="stat1.html"><i class="fa-solid fa-pen-to-square"></i> Statistic 1.0</a></li>
                     <li><a href="stat2.html"><i class="fa-solid fa-pen-to-square"></i> Statistic 2.0</a></li>
-                    <li><a href=""><i class="fa-regular fa-handshake"></i> Tabel</a></li>
+                    <li><a href="tabel.html"><i class="fa-regular fa-handshake"></i> Tabel</a></li>
                     <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
-<div class="container">
-    <h1>.</h1>
-    <canvas id="myChart"></canvas>
-</div>
+    <nav class="top-bar" data-topbar role="navigation">
+        <!-- Your navigation bar -->
+    </nav>
+    
+    <!-- Main content area for settings -->
+    <div class="container settings-container">
+        <h1>Settings</h1>
+    
+        <div class="row">
+            <div class="large-6 columns">
+                <a href="username.html" class="button">Change Username</a>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="large-6 columns">
+                <a href="email.html" class="button">Change Email</a>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="large-6 columns">
+                <a href="password.html" class="button">Change Password</a>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="large-6 columns">
+                <a href="#" class="button success">Save Changes</a>
+            </div>
+        </div>
+    </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
-<script>
-    const chartData = {
-        labels: ['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag'],
-        datasets: [{
-            label: 'Mijn opdrachten',
-            data: [4, 7, 2, 2, 5],
-            backgroundColor: 'rgba(54, 162, 235, 0.5)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-        }]
-    };
-
-    const ctx = document.getElementById('myChart').getContext('2d');
-
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: chartData,
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-</script>
-
-
-
+    
 </body>
 
 </html>

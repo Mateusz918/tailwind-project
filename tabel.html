@@ -56,22 +56,26 @@
     </style>
 
     <style>
-        .container {
-            margin-top: 20px;
-            width: 50%;
-            margin: 0 auto;
-            position: relative;
+        /* Aangepaste stijlen */
+        .table-container {
+            margin-left: 30%;
+            /* Pas de positie van de tabel aan */
+            margin-top: 50px;
         }
-    
-        canvas#myChart {
-            width: 100%;
-            height: 100px;
-            position: absolute;
-            top: 300%;
-            left: 0%;
-            transform: translate(-0%, +20%);
+
+        table.hover {
+            width: 70%;
+            /* Pas de breedte van de tabel aan */
+        }
+
+        td,
+        th {
+            padding: 0.5rem;
+            /* Voeg padding toe aan de tabelcellen */
         }
     </style>
+
+
 
 </head>
 
@@ -96,42 +100,77 @@
         </div>
     </div>
 
-<div class="container">
-    <h1>.</h1>
-    <canvas id="myChart"></canvas>
+    <div class="container table-container">
+        <h1>Bewerkbare Tabel met Foundation</h1>
+
+        <table class="hover" contenteditable="true">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Naam</th>
+                    <th>Recente activiteiten</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td> </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td> </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <div class="container">
+    <h1>Datapunt formulier</h1>
+
+    <form>
+        <div class="row">
+            <div class="large-6 columns">
+                <label>Naam
+                    <input type="text" placeholder="Voer naam in" style="width: 942px;">
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-6 columns">
+                <label>Recente activiteiten
+                    <input type="email" placeholder="Voer activiteiten in" style="width: 942px;">
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-6 columns">
+                <label>Leeftijd
+                    <input type="number" placeholder="Voer leeftijd in" style="width: 942px;">
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-6 columns">
+                <input type="submit" class="button" value="Toevoegen" style="width: 942px;">
+            </div>
+        </div>
+    </form>
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
-<script>
-    const chartData = {
-        labels: ['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag'],
-        datasets: [{
-            label: 'Mijn opdrachten',
-            data: [4, 7, 2, 2, 5],
-            backgroundColor: 'rgba(54, 162, 235, 0.5)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-        }]
-    };
-
-    const ctx = document.getElementById('myChart').getContext('2d');
-
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: chartData,
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-</script>
-
-
-
+    </div>
 </body>
 
 </html>

@@ -37,14 +37,14 @@
         }
 
         .sidebar a {
-            color: rgb(255, 255, 255);
+            color: white;
             text-decoration: none;
             padding: 10px;
             display: block;
         }
 
         .sidebar a:hover {
-            background-color: #555555;
+            background-color: #555;
         }
 
         .main-content {
@@ -58,18 +58,33 @@
     <style>
         .container {
             margin-top: 20px;
-            width: 50%;
+            width: 80%;
             margin: 0 auto;
-            position: relative;
+
         }
-    
-        canvas#myChart {
-            width: 100%;
-            height: 100px;
-            position: absolute;
-            top: 300%;
-            left: 0%;
+
+        canvas {
+            max-width: 400px;
+            margin: 0 auto;
             transform: translate(-0%, +20%);
+        }
+    </style>
+
+    <style>
+        .settings-container {
+            margin-left: 20%;
+            margin-top: 50px;
+        }
+    </style>
+
+    <style>
+        .username-container {
+            margin-left: 30%;
+            margin-top: 50px;
+        }
+
+        .username-container input[type="text"] {
+            width: 30%;
         }
     </style>
 
@@ -89,46 +104,35 @@
                     <li><a href="index.html"><i class="fa-solid fa-arrows-up-to-line"></i> Progress</a></li>
                     <li><a href="stat1.html"><i class="fa-solid fa-pen-to-square"></i> Statistic 1.0</a></li>
                     <li><a href="stat2.html"><i class="fa-solid fa-pen-to-square"></i> Statistic 2.0</a></li>
-                    <li><a href=""><i class="fa-regular fa-handshake"></i> Tabel</a></li>
+                    <li><a href="tabel.html"><i class="fa-regular fa-handshake"></i> Tabel</a></li>
                     <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
                 </ul>
             </div>
         </div>
     </div>
 
-<div class="container">
-    <h1>.</h1>
-    <canvas id="myChart"></canvas>
-</div>
+    <nav class="top-bar" data-topbar role="navigation">
+    </nav>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
-<script>
-    const chartData = {
-        labels: ['Maandag', 'Dinsdag', 'Woensdag', 'Donderdag', 'Vrijdag'],
-        datasets: [{
-            label: 'Mijn opdrachten',
-            data: [4, 7, 2, 2, 5],
-            backgroundColor: 'rgba(54, 162, 235, 0.5)',
-            borderColor: 'rgba(54, 162, 235, 1)',
-            borderWidth: 1
-        }]
-    };
+    <div class="container username-container">
+        <h1>Change E-mail</h1>
 
-    const ctx = document.getElementById('myChart').getContext('2d');
+        <form>
+            <div class="row">
+                <div class="large-6 columns">
+                    <label>New E-mail
+                        <input type="text" placeholder="Enter new e-mail">
+                    </label>
+                </div>
+            </div>
 
-    const myChart = new Chart(ctx, {
-        type: 'bar',
-        data: chartData,
-        options: {
-            responsive: true,
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-</script>
+            <div class="row">
+                <div class="large-6 columns">
+                    <input type="submit" class="button" value="Change E-mail">
+                </div>
+            </div>
+        </form>
+    </div>
 
 
 
