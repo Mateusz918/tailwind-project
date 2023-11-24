@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/mystyles.css">
+    <title>Foundation</title>
+
+    <style>
+        .container {
+            margin-top: 20px;
+        }
+
+        .sidebar {
+            background-color: #8b8b8b;
+            color: white;
+            padding-top: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0px;
+            left: 0;
+            width: 200px;
+            z-index: 2;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
+        }
+
+        .main-content {
+            margin-left: 600px;
+            padding-left: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+
+    <style>
+        .container {
+            margin-top: 20px;
+            width: 80%;
+            margin: 0 auto;
+            width: 50%;
+        }
+    
+        canvas {
+            max-width: 900px;
+            margin: 0 auto;
+            transform: translate(+0%, +220%);
+        }
+    </style>
+
+</head>
+
+<body>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <div class="container">
+        <div class="grid-x">
+            <div class="sidebar">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-ruler"></i> Materials</a></li>
+                    <li><a href="classes.html"><i class="fa-solid fa-house"></i> Classes</a></li>
+                    <li><a href="index.html"><i class="fa-solid fa-arrows-up-to-line"></i> Progress</a></li>
+                    <li><a href="stat1.html"><i class="fa-solid fa-pen-to-square"></i> Statistic 1.0</a></li>
+                    <li><a href="stat2.html"><i class="fa-solid fa-pen-to-square"></i> Statistic 2.0</a></li>
+                    <li><a href="tabel.html"><i class="fa-regular fa-handshake"></i> Tabel</a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+    <script>
+        const chartData = {
+            labels: ['September', 'October', 'November', 'December', 'Januari'],
+            datasets: [{
+                label: 'Aantal opdrachten',
+                data: [60, 122, 250, 0, 0],
+                fill: false,
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 4
+            }]
+        };
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: chartData,
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+    
+
+</body>
+
+</html>

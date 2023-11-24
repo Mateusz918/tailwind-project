@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/mystyles.css">
+    <title>Foundation</title>
+
+    <style>
+        .container {
+            margin-top: 20px;
+        }
+
+        .sidebar {
+            background-color: #8b8b8b;
+            color: white;
+            padding-top: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0px;
+            left: 0;
+            width: 200px;
+            z-index: 2;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #555;
+        }
+
+        .main-content {
+            margin-left: 600px;
+            padding-left: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+
+    <style>
+        .container {
+            margin-top: 20px;
+            width: 80%;
+            margin: 0 auto;
+
+        }
+
+        canvas {
+            max-width: 400px;
+            margin: 0 auto;
+            transform: translate(-0%, +20%);
+        }
+    </style>
+
+    <style>
+        .form-container {
+            margin-left: 30%;
+            margin-top: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <div class="container">
+        <div class="grid-x">
+            <div class="sidebar">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-ruler"></i> Materials</a></li>
+                    <li><a href="classes.html"><i class="fa-solid fa-house"></i> Classes</a></li>
+                    <li><a href="index.html"><i class="fa-solid fa-arrows-up-to-line"></i> Progress</a></li>
+                    <li><a href="stat1.html"><i class="fa-solid fa-pen-to-square"></i> Statistic 1.0</a></li>
+                    <li><a href="stat2.html"><i class="fa-solid fa-pen-to-square"></i> Statistic 2.0</a></li>
+                    <li><a href="tabel.html"><i class="fa-regular fa-handshake"></i> Tabel</a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"></script>
+    <script>
+        const chartData = {
+            labels: ['Op tijd', 'Ziek', 'Afwezig', 'Te laat'],
+            datasets: [{
+                label: 'Mijn dataset',
+                data: [60, 25, 10, 5],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.5)',
+                    'rgba(54, 162, 235, 0.5)',
+                    'rgba(75, 192, 192, 0.5)',
+                    'rgba(255, 206, 86, 0.5)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 206, 86, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+
+        const myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: chartData,
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Verdeling van kleuren'
+                    }
+                }
+            }
+        });
+    </script>
+
+    <div class="container form-container">
+        <h1>Formulier voor het toevoegen van datapunten</h1>
+
+        <form>
+            <div class="row">
+                <div class="large-6 columns">
+                    <label>Naam
+                        <input type="text" placeholder="Voer naam in" style="width: 942px;>
+                    </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="large-6 columns">
+                    <label>Recente activiteiten
+                        <input type="email" placeholder="Voer activiteiten in" style="width: 942px;>
+                    </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="large-6 columns">
+                    <label>Leeftijd
+                        <input type="number" placeholder="Voer leeftijd in" style="width: 942px;>
+                    </label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="large-6 columns">
+                    <input type="submit" class="button" value="Toevoegen" >
+                </div>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

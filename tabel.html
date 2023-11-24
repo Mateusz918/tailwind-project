@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/mystyles.css">
+    <title>Foundation</title>
+
+    <style>
+        .container {
+            margin-top: 20px;
+        }
+
+        .sidebar {
+            background-color: #8b8b8b;
+            color: white;
+            padding-top: 20px;
+            height: 100vh;
+            position: fixed;
+            top: 0px;
+            left: 0;
+            width: 200px;
+            z-index: 2;
+            overflow-y: auto;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 10px;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #555555;
+        }
+
+        .main-content {
+            margin-left: 600px;
+            padding-left: 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+
+    <style>
+        /* Aangepaste stijlen */
+        .table-container {
+            margin-left: 30%;
+            /* Pas de positie van de tabel aan */
+            margin-top: 50px;
+        }
+
+        table.hover {
+            width: 70%;
+            /* Pas de breedte van de tabel aan */
+        }
+
+        td,
+        th {
+            padding: 0.5rem;
+            /* Voeg padding toe aan de tabelcellen */
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script src="node_modules/foundation-sites/dist/js/foundation.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <div class="container">
+        <div class="grid-x">
+            <div class="sidebar">
+                <ul>
+                    <li><a href="#"><i class="fa-solid fa-ruler"></i> Materials</a></li>
+                    <li><a href="classes.html"><i class="fa-solid fa-house"></i> Classes</a></li>
+                    <li><a href="index.html"><i class="fa-solid fa-arrows-up-to-line"></i> Progress</a></li>
+                    <li><a href="stat1.html"><i class="fa-solid fa-pen-to-square"></i> Statistic 1.0</a></li>
+                    <li><a href="stat2.html"><i class="fa-solid fa-pen-to-square"></i> Statistic 2.0</a></li>
+                    <li><a href=""><i class="fa-regular fa-handshake"></i> Tabel</a></li>
+                    <li><a href="settings.html"><i class="fa-solid fa-gear"></i> Settings</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container table-container">
+        <h1>Bewerkbare Tabel met Foundation</h1>
+
+        <table class="hover" contenteditable="true">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Naam</th>
+                    <th>Recente activiteiten</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td> </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td> </td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+
+
+        <div class="container">
+    <h1>Datapunt formulier</h1>
+
+    <form>
+        <div class="row">
+            <div class="large-6 columns">
+                <label>Naam
+                    <input type="text" placeholder="Voer naam in" style="width: 942px;">
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-6 columns">
+                <label>Recente activiteiten
+                    <input type="email" placeholder="Voer activiteiten in" style="width: 942px;">
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-6 columns">
+                <label>Leeftijd
+                    <input type="number" placeholder="Voer leeftijd in" style="width: 942px;">
+                </label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-6 columns">
+                <input type="submit" class="button" value="Toevoegen" style="width: 942px;">
+            </div>
+        </div>
+    </form>
+</div>
+    </div>
+</body>
+
+</html>
